@@ -5,9 +5,12 @@ import sbt._
   */
 object NongpedPedAPIBuild extends Build {
 
-  object NongpedDependencyVersionManager {
-    val spec2_version = "2.3.7"
-  }
+  lazy val root = Project(
+    id = "nongped-pull-api",
+    base = file(".")) aggregate common dependsOn common
 
+  lazy val common = Project(
+    id = "nongped-pull-api-common",
+    base = file("common"))
 }
 
