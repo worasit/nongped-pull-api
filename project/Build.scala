@@ -6,11 +6,17 @@ import sbt._
 object NongpedPedAPIBuild extends Build {
 
   lazy val root = Project(
-    id = "nongped-pull-api",
-    base = file(".")) aggregate common dependsOn common
+    id = "nongped-pull-api-root",
+    base = file(".")).aggregate(common, api).dependsOn(common, api)
 
   lazy val common = Project(
     id = "nongped-pull-api-common",
-    base = file("common"))
+    base = file("common")
+  )
+
+  lazy val api = Project(
+    id = "nongped-pull-api-route",
+    base = file("api")
+  )
 }
 
