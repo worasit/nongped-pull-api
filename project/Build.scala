@@ -26,6 +26,12 @@ object NongpedPedAPIBuild extends Build {
     base = file("api"),
     settings = buildSettings
   ).dependsOn(common)
+
+  lazy val model = Project(
+    id = "nongped-pull-api-model",
+    base = file("model"),
+    settings = buildSettings
+  )
 }
 
 
