@@ -25,7 +25,7 @@ object NongpedPedAPIBuild extends Build {
     id = "nongped-pull-api-route",
     base = file("api"),
     settings = buildSettings
-  )
+  ).dependsOn(common)
 }
 
 
